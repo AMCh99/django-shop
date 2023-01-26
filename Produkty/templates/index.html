@@ -1,0 +1,38 @@
+<html>
+<head>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+</head>
+<body>
+<header>
+      <h1 class="logo">X-Komp</h1>
+      <ul class="list">
+        <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+        <li><a href="#">Informacje i kontakt</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'mojekonto' %}">Moje konto</a></li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
+          {% else %}
+            <li><a href="{% url 'logowanie' %}">Zaloguj</a></li>
+          <li><a href="{% url 'rejestracja' %}">Zarejestruj</a></li>
+          {% endif %}
+      </ul>
+      <a href="{% url 'koszyk' %}" class="button"><button>Koszyk</button></a>
+
+    </header>
+<div style="clear:both"></div>
+<div style="max-width:350px; float:left"  class="produkty">
+    <h2>Kategorie</h2>
+{% for kat in kategorie %}
+<ul>
+<li><a href="/kategoria/{{ kat.id }}">{{ kat.kategoria_produktu}}</a></li>
+</ul>
+{% endfor %}
+    </div>
+<div style="max-width:1100; float:left">
+    {% block produkt %}   {% endblock produkt %}
+
+</div>
+</body>
+</html>

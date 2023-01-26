@@ -1,0 +1,321 @@
+* {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    max-width: 1600px;
+    margin: auto;
+    background-color: #F2F2F2;
+  }
+  header {
+    padding-top: 50px;
+    margin-top: 10px;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    justify-content: space-around;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    background-color: #152840;
+    box-shadow: 5px 8px #0D0D0D;
+    text-shadow: 4px 2px #0D0D0D;
+  }
+  
+  .logo {
+    font-size: 4rem;
+    padding-bottom: 20px;
+  }
+  .list {
+    
+    list-style: none;
+    display: flex;
+  }
+  .list li {
+    margin: 20px 25px;
+  }
+  
+  .list li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 26px;
+  }
+  
+  .button button{
+    color: white;
+    border: none;
+    border-radius: 50px;
+    background-color: #F20505;
+    padding: 20px;
+    font-size: 28px;
+    box-shadow: 2px 4px #0D0D0D;
+    text-shadow: 1px 1px #0D0D0D;
+  }
+  
+  .button button:hover {
+    cursor: pointer;
+    background-color: #A61B26;
+  }
+  
+  .list li a:hover {
+    cursor: pointer;
+    color: #A61B26;
+    text-decoration: underline;
+  }
+
+  .produkty h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+  }
+
+  .produkty{
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    list-style: inside;
+    margin-left: 25px;
+    background-color: #152840;
+    border-radius: 50px;
+    box-shadow: 5px 8px #0D0D0D;
+    text-shadow: 4px 2px #0D0D0D;
+  }
+
+  .produkty a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 22px;
+  }
+  .produkty a:hover {
+    cursor: pointer;
+    color: #A61B26;
+  }
+
+  .lista_produktow{
+    font-size: 1.8rem;
+    margin: 50px 80px;
+  }
+
+  .lista_produktow li{
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+  .lista_produktow li a{
+    text-decoration: none;
+    color: #0D0D0D;
+  }
+  .lista_produktow li a:hover{
+    text-decoration: underline;
+  }
+
+  .produkt h1{
+    font-size: 4rem;
+  }
+
+  .produkt {
+    margin: 50px 80px;
+    color: #0D0D0D;
+    font-size: 22px;
+  }
+
+  .produkt p {
+    margin-top: 20px;
+  }
+  .produkt a button {
+    margin-top:40px; 
+  }
+  .koszyk h2 {
+    font-size: 3.5rem;
+      margin-bottom: 20px;
+
+  }
+  .koszyk {
+    margin: 25px;
+    color: #0D0D0D;
+    font-size: 30px;
+  }
+
+  .prod_koszyk {
+    border: 1px solid #0D0D0D;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 30% 20% 30% auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .prod_koszyk:hover{
+    background-color: #e0dfdf;
+  }
+  .prod_koszyk p {
+    margin: 10px;
+
+  }
+
+  .koszyk .button{
+    float: right;
+    margin-right: 100px;
+  }
+
+  .opcje_dostawy {
+    border-top: 1px solid #0D0D0D;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 22px;
+    padding: 20px;
+  }
+  .opcje_dostawy label input{
+    margin-left: 30px;
+    margin-right: 5px;
+    
+  }
+
+  .usun button{
+    float: right;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    background-color: #F20505;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 1px 1px #0D0D0D;
+    text-shadow: 1px 1px #0D0D0D;
+    
+
+  }
+  .usun button:hover{
+    cursor: pointer;
+    background-color: #A61B26;
+  }
+
+  .konto {
+    margin: 25px;
+    color: #0D0D0D;
+    font-size: 30px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+
+  }
+  .konto h2{
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    }
+
+  .logowanie {
+    width: 600px;
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    list-style: inside;
+    margin: auto;
+    background-color: #152840;
+    border-radius: 50px;
+    box-shadow: 5px 8px #0D0D0D;
+    text-shadow: 4px 2px #0D0D0D;
+    margin-bottom: 50px;
+  }
+
+  .logowanie form input{
+  display: block;
+  padding: 14px;
+  background-color: #e0dfdf;
+  color:#0D0D0D;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  }
+  .logowanie form input:hover{
+    cursor: pointer;
+    background-color: #e0dfdf;
+  }
+
+  .logowanie form input[type=submit]{
+    background-color: #F20505;
+    color: #e0dfdf;
+  }
+
+  .logowanie form input[type=submit]:hover{
+    background-color: #A61B26;
+  }
+
+  .logowanie h1 {
+    text-align: center;
+  }
+
+  .button_log{
+    box-shadow: 2px 4px #0D0D0D;
+    text-shadow: 1px 1px #0D0D0D;
+  }
+  
+.logowanie p, a {
+  text-shadow: none;
+  font-size: 18px;
+  text-align: center;
+  color: #e0dfdf;
+}
+
+
+
+
+.rej {
+  width: 600px;
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    list-style: inside;
+    margin: auto;
+    background-color: #152840;
+    border-radius: 50px;
+    box-shadow: 5px 8px #0D0D0D;
+    text-shadow: 4px 2px #0D0D0D;
+    margin-bottom: 50px;
+}
+
+.rej p, a {
+  text-shadow: none;
+  font-size: 18px;
+  text-align: center;
+  color: #e0dfdf;
+}
+
+.rej form input{
+  display: block;
+  padding: 14px;
+  background-color:#e0dfdf;
+  color: #0D0D0D;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  }
+
+
+  .rej form input:hover{
+    cursor: pointer;
+    background-color: #e0dfdf;
+  }
+
+.rej form input[type=submit]{
+  background-color: #F20505;
+  box-shadow: 4px 4px #0D0D0D;
+  text-shadow: 1px 1px #0D0D0D;
+}
+.rej form input[type=submit]:hover{
+  background-color: #A61B26;
+}
+
+label{
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.rej h1 {
+  text-align: center;
+}

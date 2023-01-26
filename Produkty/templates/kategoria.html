@@ -1,0 +1,25 @@
+<html>
+{% extends 'index.html' %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+<body>
+
+{% block produkt %}
+{% if kategoria_produkt %}
+<div class='lista_produktow'>
+{% for produkt in kategoria_produkt %}
+
+<ul>
+<li><a href="/produkt/{{ produkt.id }}/" > {{ produkt.nazwa }} </a></li>
+</ul>
+
+{% endfor %}
+</div>
+{% else %}
+{% endif %}
+
+
+{% endblock produkt %}
+</body>
+</html>

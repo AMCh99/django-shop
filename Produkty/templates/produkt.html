@@ -1,0 +1,29 @@
+<html>
+{% extends 'index.html' %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+
+{% block produkt %}
+<div class='produkt'>
+{% if produkt_user %}
+    
+    <h1 id='nazwa_prod'> {{ produkt_user.nazwa}} </h1>
+    <p> Producent: {{produkt_user.producent}} </p>
+    <p> Opis: {{produkt_user.opis}} </p>
+    <p> Cena: {{produkt_user.cena}} </p>
+
+    	{% csrf_token %}
+    {% if user.is_authenticated %}
+    <form action='dodaj_do_koszyka' method='GET'>
+	<a href="#" class="button"><button type='submit'> Dodaj do koszyka </button></a>
+	</form>
+    {% endif %}
+    {% if not user.is_authenticated %}
+	<a href="{% url 'logowanie' %}" class="button"><button>Zaloguj aby dodać do koszyka.</button></a>
+    {% endif %}
+</div>
+    
+{% endif %}
+{% endblock produkt %}
+</html>

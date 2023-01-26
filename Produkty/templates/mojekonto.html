@@ -1,0 +1,46 @@
+<html>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+
+<body>
+	<header>
+      <h1 class="logo">X-Komp</h1>
+      <ul class="list">
+        <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+        <li><a href="#">Informacje i kontakt</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'mojekonto' %}">Moje konto</a></li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
+          {% else %}
+            <li><a href="{% url 'logowanie' %}">Zaloguj</a></li>
+          <li><a href="{% url 'rejestracja' %}">Zarejestruj</a></li>
+          {% endif %}
+      </ul>
+      <a href="{% url 'koszyk' %}" class="button"><button>Koszyk</button></a>
+
+    </header>
+    <div class='konto'>
+<h2>Moje konto</h2>
+<p>Login: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Imie i nazwisko: {{ user.first_name }} {{ user.last_name }}</p>
+</div>
+<div class='koszyk'>
+<h2>Historia zakupów</h2>
+
+	{% if zakupy|length > 0 %}
+		{% for produkt in zakupy %}
+			<div class='prod_koszyk'>
+				<p>{{ produkt.przedmiot }}</p>    <p>Ilosć: [{{ produkt.ilosc }}]</p>    <p>Data zakupu: {{produkt.data_zakupu}} </p>
+			</div>
+		{% endfor %}
+	{% else %}
+		<p>Jeszcze nic nie kupiłeś/aś.</p>
+	{% endif %}
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+
+<header>
+      <h1 class="logo">X-Komp</h1>
+      <ul class="list">
+        <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+        <li><a href="#">Informacje i kontakt</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'mojekonto' %}">Moje konto</a></li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
+          {% else %}
+            <li><a href="{% url 'logowanie' %}">Zaloguj</a></li>
+          <li><a href="{% url 'rejestracja' %}">Zarejestruj</a></li>
+          {% endif %}
+      </ul>
+      <a href="{% url 'koszyk' %}" class="button"><button>Koszyk</button></a>
+
+    </header>
+<div class='koszyk'>
+<h2>Koszyk</h2>
+
+{% if user.is_authenticated %}
+	{% if przedmioty_w_koszyku|length > 0 %}
+		{% for produkt in przedmioty_w_koszyku %}
+			<div class='prod_koszyk'>
+				<p>{{ produkt.przedmiot }}</p>    <p>Ilość: [{{ produkt.ilosc }}]</p>    <p>Cena: {{produkt.przedmiot.cena}} </p>
+
+				<a href="{% url 'usun_z_koszyka' produkt.przedmiot_id %}" class="usun"><button>Usuń</button></a>
+			</div>
+		{% endfor %}
+		<form class='opcje_dostawy'>
+			<p>Opcje dostawy</p>
+			<label><input type="radio" name = 'dostawa' >Kurier 12,99zł</label>
+			<label><input type="radio" name = 'dostawa' >Odbiór osobisty 0,00zł</label>
+			<label><input type="radio" name = 'dostawa' >Paczkomat inpost 7,99zł</label>
+		</form>
+
+
+		<a href="{% url 'kup_teraz' user.id %}" class="button"><button>Kup teraz</button></a>
+	{% else %}
+		<p>Twój koszyk jest pusty.</p>
+	{% endif %}
+{% else %}
+	<p>Zaloguj się aby dodać do koszyka.</p>
+{% endif %}
+</div>
+
+

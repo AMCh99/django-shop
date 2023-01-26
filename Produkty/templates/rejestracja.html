@@ -1,0 +1,39 @@
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'produkty/style.css' %}">
+    <meta charset="utf-8">
+<header>
+      <h1 class="logo">X-Komp</h1>
+</header>
+<div class='rej'>
+<h1 class='logo'>Rejestracja</h2>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    <div >
+        <label>Login: 
+    {{form.username}}</label>
+    </div>
+    <div >
+        <label>Email: 
+    {{form.email}}</label>
+    </div>
+    <div >
+        <label>Imie: 
+    {{form.first_name}}</label>
+    </div>
+    <div >
+    <label>Nazwisko: 
+    {{form.last_name}}</label>
+    </div>
+    <div>
+        <label>Haslo: 
+    {{form.password1}}</label>
+    </div>
+    <div >
+        <label>Potwierdź haslo:
+    {{form.password2}}</label>
+    </div>
+    <input type="submit" name="nowy_uzytkownik" value="Rejestruj">
+    <p>Masz już konto? <a href="{% url 'logowanie' %}">Zaloguj</a></p>
+</form>
+</div>
